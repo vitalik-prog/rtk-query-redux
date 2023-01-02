@@ -1,24 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
+import { useEffect } from 'react';
 import './App.css';
+import PostContainer from './components/PostContainer';
+import { useAppDispatch, useAppSelector } from './hooks/redux';
+import { fetchUsersWithToolkit } from './store/reducers/ActionCreators';
 
 function App() {
+  // const dispatch = useAppDispatch();
+  // const {users, isLoading, error} = useAppSelector((state) => state.userReducer);
+
+  // useEffect(() => {
+  //   // dispatch(fetchUsers()); It fires standart approach without redux-toolkit
+  //   dispatch(fetchUsersWithToolkit()); // It fires redux-toolkit approach
+  // }, [dispatch]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* {isLoading && <h1>Loading...</h1>}
+      {error && <h1>{error}</h1>}
+      {JSON.stringify(users)} */}
+      <div style={{ display: "flex", gap: "150px" }}>
+        <PostContainer />
+      </div>
     </div>
   );
 }
